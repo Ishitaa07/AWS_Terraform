@@ -12,7 +12,12 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# Create a VPC
-resource "aws_vpc" "example" {
-  cidr_block = "10.0.0.0/16"
+# Create a s3 bucket
+resource "aws_s3_bucket" "example" {
+  bucket = "ishitas3-sample-bucket"
+
+  tags = {
+    Name        = "My bucket 2.0"
+    Environment = "Dev"
+  }
 }
